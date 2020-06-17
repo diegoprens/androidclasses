@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@ionic/core/css/ionic.bundle.css"/>
+
+    <script type="module" src="https://cdn.jsdelivr.net/npm/@ionic/core/dist/ionic/ionic.esm.js"></script>
+    <script nomodule src="https://cdn.jsdelivr.net/npm/@ionic/core/dist/ionic/ionic.js"></script>
+    
+</head>
+<body>
+    <ion-app>
+        <ion-header>
+            <ion-toolbar color="primary">
+                <ion-title>Planificador de Presupuesto</ion-title>
+            </ion-toolbar>
+        </ion-header>
+        <ion-content>
+            <ion-grid>
+                <ion-row>
+                    <ion-col size-md="6" offset-md="3">
+                        <ion-card>
+                            <ion-card-header>
+                                <ion-card-title>
+                                    Nuevo Gasto
+                                </ion-card-title>                    
+                            </ion-card-header>
+                            <ion-card-content>
+                                <ion-item>
+                                    <ion-label position="floating">Razón del Gasto</ion-label>
+                                    <ion-input id="input-reason" type="text" ></ion-input>
+                                </ion-item>
+                                <ion-item>
+                                    <ion-label position="floating">Cantidad</ion-label>
+                                    <ion-input id="input-amount" type="number" ></ion-input>
+                                </ion-item>
+                                <div class="ion-margin-vertical ion-text-end">
+                                    <ion-button id="btn-clear" fill="outline" color="danger">
+                                        <ion-icon slot="start" name="close"></ion-icon>
+                                        Limpiar
+                                    </ion-button>
+                                    <ion-button id="btn-add">
+                                        <ion-icon slot="start" name="add"></ion-icon>
+                                        Agregar Gasto
+                                    </ion-button>
+                                </div>
+                            </ion-card-content>
+                        </ion-card>
+                    </ion-col>
+                </ion-row>
+                <ion-row >
+                    <ion-col size-md="6" offset-md="3">
+                        <ion-list id="expenses-list">
+
+                        </ion-list>
+                    </ion-col>
+                </ion-row>
+                <ion-row>
+                    <ion-col  size-md="6" offset-md="3">
+                        <p style="margin-left: 10px;">Gasto Total: <span id="total-expenses"></span> </p> 
+                    </ion-col>
+                </ion-row>
+            </ion-grid>
+            <ion-alert-controller></ion-alert-controller>
+        </ion-content>        
+    </ion-app>
+    <script src="app.js"></script>
+</body>
+</html>
